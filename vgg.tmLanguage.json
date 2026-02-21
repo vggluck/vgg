@@ -1,0 +1,38 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "VGG",
+  "scopeName": "source.vgg",
+  "fileTypes": ["vgg"],
+  "patterns": [
+    {
+      "comment": "Начальные и конечные маркеры VGG",
+      "name": "keyword.control.vgg",
+      "match": "!vgg\\s*=\\s*start|end"
+    },
+    {
+      "comment": "Команды открытия и закрытия блоков",
+      "name": "entity.name.tag.vgg",
+      "match": "open:\\w+|close:\\w+"
+    },
+    {
+      "comment": "Закрывающие атрибуты параметров",
+      "name": "comment.block.vgg",
+      "match": "\\(close=\\w+\\)"
+    },
+    {
+      "comment": "Ключевые параметры разметки",
+      "name": "variable.parameter.vgg",
+      "match": "\\b(text|color|font|title of page|fontlink):"
+    },
+    {
+      "comment": "Ссылки и URL",
+      "name": "string.underline.vgg",
+      "match": "https?://[\\w\\d./?=#]+"
+    },
+    {
+      "comment": "Цвета (hex или названия)",
+      "name": "constant.other.color.vgg",
+      "match": "#[0-9a-fA-F]{3,6}|\\b(red|blue|green|yellow|white|black|gray|purple|cyan)\\b"
+    }
+  ]
+}
